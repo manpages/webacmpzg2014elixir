@@ -15,5 +15,10 @@ defmodule WebCamp.Counter do
     IO.inspect "New state = #{state} + 1"
     {:noreply, state+1}
   end
+  
+  def handle_call(:inc, from, state) do
+    IO.inspect "Returning old state!"
+    {:reply, state, state+1}
+  end
 
 end
