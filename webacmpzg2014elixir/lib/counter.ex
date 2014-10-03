@@ -1,18 +1,23 @@
 defmodule WebCamp.Counter do
   # http://elixir-lang.org/docs/stable/elixir/GenServer.html
   use GenServer
+  import WebCamp.Macros.Persist
+  import WebCamp.Macros.OTP
+  require Logger
 
-  def init([]) do
-    :gproc.reg({:n, :l, __MODULE__})
-    {:ok, 0}
+  def otp_id(_ \\ []), do: __MODULE__
+
+  ginit [] do
+    { [{:n, :l, __MODULE__}], 
+      WebCamp.Persist.get(otp_id) || 0 }
   end
 
   def start_link do
     GenServer.start_link(__MODULE__, [])
   end
 
-  def handle_cast(anything, state) do
-    IO.inspect "New state = #{state} + 1"
+  defwrite(:inc, state) do
+    Logger.debug "New state = #{state} + 1"
     {:noreply, state+1}
   end
 
