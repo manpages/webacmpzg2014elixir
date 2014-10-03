@@ -11,7 +11,7 @@ defmodule WebCamp.Counter do
     GenServer.start_link(__MODULE__, [])
   end
 
-  def handle_cast(anything, state) do
+  def handle_cast(:inc, state) do
     IO.inspect "New state = #{state} + 1"
     {:noreply, state+1}
   end
