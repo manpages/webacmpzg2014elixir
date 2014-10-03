@@ -1,0 +1,5 @@
+%{"cowboy": {:package, "1.0.0"},
+  "cowlib": {:package, "1.0.0"},
+  "gproc": {:git, "https://github.com/uwiger/gproc", "26a9d9faff7b9fd60687d4bcfd3d6974b73205f3", [branch: "master"]},
+  "plug": {:package, "0.8.0"},
+  "ranch": {:package, "1.0.0"}}

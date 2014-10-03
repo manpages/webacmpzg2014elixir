@@ -1,0 +1,10 @@
+Welcome to Black Mesa *cough*
+So, here's task number zero — build the project skeleton using ``mix`` tool.
+And add the following dependencies:
+
+ + gproc
+ + cowboy
+ + plug
+
+Use ``mix help`` to figure out how to do make the project skeleton, then
+read generated ``mix.exs`` file and follow the instructions in commentaries.

@@ -1,0 +1,2 @@
+defmodule WebCamp do
+end
